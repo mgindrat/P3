@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Sophie Bluel - Architecte d'intérieur</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+	<meta name="description" content="">
+	<script src="https://kit.fontawesome.com/f3fe0c8606.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+<header>
+	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+	<nav>
+		<ul>
+			<li>projets</li>
+			<li>contact</li>
+			<li>logout</li>
+			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+		</ul>
+	</nav>
+	
+	<div class="bar" >
+		<a href="#modal1" id="btn-ed" class="js-modal"><i class="fa-regular fa-pen-to-square"></i> Mode édition</a>
+		<button id="btn-post">Publier les changements</button>
+	</div>
+
+<!-- Ouverture modal -->
+
+<aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titleModal" style="display:none">
+	<div class="modal-wrapper js-modal-stop">
+	<div id="modal-content">
+
+			<div class="js-modal-close">
+				<a href="#"><i class="fa-solid fa-xmark icone"></i></a>
+			</div>
+			<h2 id="titleModal">Galerie photo</h2>
+			<div class="gallery-mod">
+	
+			</div>
+			<br>
+			<hr>
+			<div class="btn-modal">
+				<button class="modal-add-btn">Ajouter une photo</button>
+				<a href="#" class ="modal-delete-btn">Supprimer la galerie</a>
+			</div>
+	</div>
+	<div id="form2">
+		
+		<div class="js-modal-back">
+			<a href="#"><i class="fa-solid fa-arrow-left"></i></a>
+			<div class="js-modal-close">
+			<a href="#"><i class="fa-solid fa-xmark icone"></i></a>
+		</div>
+	</div>
+		<form class="add-form" id="add-form" action="#" method="post">
+			<h2 class="titleM2">Ajout photo</h2>
+			<div class="form-upload">
+
+			<img class="form2-rectangle" src="assets/Rectangle.png" alt="rectangleForm">
+			<label for="image" class="file-upload">
+			<i class="fa-sharp fa-regular fa-image"></i>
+			</label>
+			<input type="file" id="image" name="image" onchange="previewImage();" hidden>
+			<img id="preview" src="" alt=""><br><br>
+			<div class="hideWhileClick">
+			<label for="image" class="btn add-btn-form2"> + Ajouter photo</label>
+			<p>jpg, png : 4mo max</p>
+			</div>
+			</div>
+
+			<label for="title">Titre</label>
+			<input type="text" id="title" name="title" required>
+			<label for="category">Catégorie</label>
+			<select id="category" name="category" required>
+			<option value="1">Objets</option>
+			<option value="2">Appartements</option>
+			<option value="3">Hôtels & restaurants</option>	
+			</select>
+		</form>
+		<hr>
+		<button class="btnM2" type="submit" value="Valider" class="modal2-val-btn">Valider</button>
+	</div>
+	</div>		
+</aside> 
+
+
+</header>
+<main>
+	<section id="introduction">
+		<figure>
+			<img src="./assets/images/sophie-bluel.png" alt="">
+			<br>
+			<a href="#modal1" id="btn-ed2" class="js-modal"><i class="fa-regular fa-pen-to-square"></i> Modifier</a>
+		</figure>
+		<article>
+			<h2>Designer d'espace</h2>
+			<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
+			<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
+			<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
+		</article>
+	</section>
+	<section id="portfolio">
+		<h2>Mes Projets <a href="#modal1" id="btn-ed2" class="js-modal"><i class="fa-regular fa-pen-to-square"></i> Modifier</a></h2>
+		<div id="bouton" style="visibility:hidden">
+			<button id="btn-all">Tous</button>
+			<button id="btn-obj">Objets</button>
+			<button id="btn-flat">Appartements</button>
+			<button id="btn-hr">Hôtels & restaurants</button>
+		</div>
+		<div class="gallery">	
+		</div>
+	</section>
+	<section id="contact">
+		<h2>Contact</h2>
+		<p>Vous avez un projet ? Discutons-en !</p>
+		<form action="#" method="post">
+			<label for="name">Nom</label>
+			<input type="text" name="name" id="name" autocomplete="off">
+			<label for="email">Email</label>
+			<input type="email" name="email" id="email" autocomplete="off">
+			<label for="message">Message</label>
+			<textarea name="message" id="message" cols="30" rows="10"></textarea>
+			<input type="submit" value="Envoyer">
+		</form>
+	</section>
+</main>
+
+<footer>
+	<nav>
+		<ul>
+			<li>Mentions Légales</li>
+		</ul>
+	</nav>
+</footer>
+<script src="./js/response.js"></script>
+<script src="./js/connecter.js"></script>
+</body>
+</html>
