@@ -91,7 +91,6 @@ const addPhotoBtn = document.querySelector('.modal-add-btn');
 addPhotoBtn.addEventListener('click', function(e) {
 e.preventDefault();
 stopPropagation(e);
-console.log(document.getElementById("modal-content"));
 document.getElementById("modal-content").setAttribute('style', 'display: none');
 document.getElementById("form2").setAttribute('style', 'display: block');
 stopPropagation(e);
@@ -112,12 +111,10 @@ validateButton.addEventListener('click', (e) => {
   
   // Récupérer les valeurs du formulaire
   const image = imageInput.files[0];
-  console.log(image);
   const title = titleInput.value;
-  console.log(title);
   const category = parseInt(categoryInput.value);
   //valeur convertie en nbr entier avec "parseInt()" !
-  console.log(category);
+ 
   
   
   const formData = new FormData();
@@ -125,8 +122,6 @@ validateButton.addEventListener('click', (e) => {
   formData.append('title', title);
   formData.append('category', category);
   
-console.log(formData);
-console.log(token);
 
 if (image && title && category) {
   fetch(`http://localhost:5678/api/works`, {
@@ -135,7 +130,6 @@ if (image && title && category) {
       body: formData
     })
     .then(response => {
-      console.log('Réponse du serveur :', response);
       document.querySelector('.gallery').innerHTML='';
         afficherToutesLesImages();
       return response.json(); 
@@ -147,7 +141,7 @@ if (image && title && category) {
     })
 
     .catch(error => {
-      console.error('Erreur :', error);
+      //console.error('Erreur :', error);
     });
 } else {
   alert("Tous les champs sont obligatoires !")

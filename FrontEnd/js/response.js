@@ -37,8 +37,6 @@ function deleteWork (e) {
   let element = e.target.closest("figure");
   let idValue = element.getAttribute('id');
 
-  console.log(element);
-
   fetch(`http://localhost:5678/api/works/${idValue}`, {
         method: 'DELETE',
         headers: {
@@ -47,7 +45,6 @@ function deleteWork (e) {
         }})
   
     .then(() => {
-        console.log(idValue);
         element.parentNode.removeChild(element);
         document.querySelector('.gallery').innerHTML='';
         afficherToutesLesImages();
@@ -65,7 +62,6 @@ function getProjectsbyCriteria(typeProjet) {
   fetch("http://localhost:5678/api/works")
     .then((reponse) => reponse.json())
     .then((works) => {
-      console.log(works);
       if (typeProjet == "tous") {
         printGallery(works);
       } else if (typeProjet == "obj") {
@@ -84,7 +80,6 @@ function getProjectsbyCriteriaMod() {
   fetch("http://localhost:5678/api/works")
     .then((reponse) => reponse.json())
     .then((works) => {
-      console.log(works);
         printGalleryMod(works);
     });
 }

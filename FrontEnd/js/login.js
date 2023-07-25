@@ -12,9 +12,6 @@ form.addEventListener("submit", (e) => {
   const email = document.getElementById("email");
   const mdp = document.getElementById("mdp");
 
-  console.log(email.value.trim());
-  console.log(mdp.value.trim());
-
   if (validerEmail(email.value.trim())) {
     fetch("http://localhost:5678/api/users/login", {
       method: "post",
@@ -31,9 +28,7 @@ form.addEventListener("submit", (e) => {
     })
       .then((rep) => rep.json())
       .then((response) => {
-        console.log(response);
-        //console.log(response.json());
-
+      
         if (response.userId) {
           localStorage.setItem("auth_token", response.token);
           window.location.href = "connecter.html";
